@@ -1,4 +1,8 @@
-package com.codeoftheweb.salvo;
+package com.codeoftheweb.salvo.Classes;
+import com.codeoftheweb.salvo.DTO.PlayerDTO;
+import com.codeoftheweb.salvo.Salvo;
+import com.codeoftheweb.salvo.Score;
+import com.codeoftheweb.salvo.Ship;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -27,7 +31,6 @@ public class GamePlayer {
 
     @OneToMany(mappedBy="gamePlayer", fetch=FetchType.EAGER)
     Set<Salvo> salvoes = new HashSet<>();
-
 
 
     public GamePlayer() {}
@@ -75,7 +78,7 @@ public class GamePlayer {
         return player;
     }
 
-    public void setGamePlayer(Player player) {
+    public void setGamePlayer(PlayerDTO player) {
     }
 
     public Set<Ship> getShip() {

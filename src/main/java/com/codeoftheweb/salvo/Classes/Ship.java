@@ -1,4 +1,4 @@
-package com.codeoftheweb.salvo;
+package com.codeoftheweb.salvo.Classes;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -19,15 +19,15 @@ public class Ship {
     private String type;
     @ElementCollection
     @Column(name = "Location")
-    private List<String> location;
+    private List<String> shipLocations;
 
 
     public Ship(){}
 
 
-    public Ship(String type, List<String> location, GamePlayer gamePlayer){
+    public Ship(String type, List<String> shipLocations, GamePlayer gamePlayer){
         this.type = type;
-        this.location= location;
+        this.shipLocations= shipLocations;
         this.gamePlayers = gamePlayer;
 
     }
@@ -53,12 +53,12 @@ public class Ship {
         this.type = type;
     }
 
-    public List<String> getLocation() {
-        return location;
+    public List<String> getShipLocations() {
+        return shipLocations;
     }
 
-    public void setLocation(List<String> location) {
-        this.location = location;
+    public void setShipLocations(List<String> shipLocations) {
+        this.shipLocations = shipLocations;
     }
 
 

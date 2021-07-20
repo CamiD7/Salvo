@@ -1,10 +1,10 @@
-package com.codeoftheweb.salvo;
+package com.codeoftheweb.salvo.Classes;
+import com.codeoftheweb.salvo.Score;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Set;
 
@@ -28,6 +28,10 @@ public class Game {
 
 
     public Game() { }
+
+    public Game(Date created) {
+        this.created = created;
+    }
 
     @OneToMany(mappedBy="game", fetch=FetchType.EAGER)
     Set<GamePlayer> gamePlayers;
